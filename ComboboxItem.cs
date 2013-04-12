@@ -1,23 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace SkypeHistoryExporter
+[Serializable()]
+public class ComboboxItem : IComparable<ComboboxItem>
 {
-    public class ComboboxItem
+   
+    public int CompareTo(ComboboxItem other)
     {
-        public ComboboxItem(string text, object value)
-        {
-            Text = text;
-            Value = value;
-        }
-        public string Text { get; set; }
-        public object Value { get; set; }
-
-        public override string ToString()
-        {
-            return Text;
-        }
+        if (other == null) return 1;
+        return Text.CompareTo(other.Text);
     }
+
+
+    public ComboboxItem(string text, object value)
+    {
+        Text = text;
+        Value = value;
+    }
+
+    public string Text { get; set; }
+    public object Value { get; set; }
+
+    public override string ToString()
+    {
+        return Text;
+    }
+   
 }
+

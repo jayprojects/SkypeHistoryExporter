@@ -22,5 +22,17 @@ namespace SkypeHistoryExporter.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string destDataSources {
+            get {
+                return ((string)(this["destDataSources"]));
+            }
+            set {
+                this["destDataSources"] = value;
+            }
+        }
     }
 }

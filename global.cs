@@ -10,8 +10,12 @@ namespace SkypeHistoryExporter
         
 
         public static string dbName;
-
         public static string connectionString;
         public static bool connectDb;
+
+        public static string sqlLiteDbFileName="main.db";
+        public static string sqlLiteDbFilePath = "";
+
+        public static string skypeUserName = "";
     }
 }

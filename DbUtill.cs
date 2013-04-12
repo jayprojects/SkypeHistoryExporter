@@ -189,8 +189,21 @@ namespace SkypeHistoryExporter
 
 
 
+         public static DataTable getMessages(String partner)
+        {
+            string query =
+                @"SELECT top 100
+                  convo_id
+                  ,author
+                  ,dialog_partner
+                  ,convert(varchar, DATEADD(s, timestamp, '19700101'), 100) as message_time
+                  ,body_xml
+              FROM Messages where dialog_partner like '" + partner + "'";
+            Console.Out.Write(query);
+            return executeQuery(query);
+        }
 
-
+        
 
 
 
